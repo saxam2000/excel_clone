@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* ******************************menu container *****************************************/
+
+.menu_container {
+    background-color: skyblue;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.menu_container>* {
+    height: 80%;
+    width: 20%;
+    border-right: 2px solid;
+}
+
+.formatting-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.subgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.subgroup>* {
+    width: 100%;
+}
+
+.BUI_container {
+    display: flex;
+    justify-content: center;
+}
+
+.BUI_container>* {
+    width: 30%;
+}
+
+.color_container {
+    width: 45%;
+}
+
+.color_container>* {
+    display: flex;
+    justify-content: space-between;
+}
+
+.alignment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alignment-container>* {
+    width: 20%;
+}
+
+
+/* **********************************formula container */
+
+.formula_container {
+    background-color: aliceblue;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Arial;
+}
+
+.address-box {
+    width: 10%;
+}
+
+.seperator {
+    width: 2%;
+}
+
+.formula-box {
+    width: 80%;
+}
+
+
+/*************************** grid ****************************/
+
+.top-left-block {
+    height: 30px;
+    width: 25px;
+    background-color: gray;
+}
+
+.top-row {
+    min-height: 30px;
+    background-color: lightgreen;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+}
+
+.col {
+    min-width: 60px;
+    border: 1px solid;
+    max-width: 60px;
+    min-height: 30px;
+    /* max-height: 40px; */
+    /* overflow: auto; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.row {
+    display: flex;
+    min-height: 30px;
+}
+
+.left-col {
+    width: 25px;
+    /* border: 1px solid red; */
+}
+
+.left-col-box {
+    height: 30px;
+    background-color: lightgreen;
+    text-align: center;
+    border: 1px solid;
+}
+
+.grid_container {
+    position: relative;
+    height: calc( 100vh - ( 80px + 30px + 50px));
+    /* display: flex; */
+    overflow: auto;
+}
+
+.grid {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+}
+
+
+/* **************************************sheet******************************** */
+
+.sheets {
+    background-color: rgb(6, 90, 90);
+    height: 50px;
+    display: flex;
+}
+
+.add_sheet_container {
+    height: 100%;
+    min-width: 30px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.2rem;
+    color: lightgreen;
+    /* border: 2px solid blanchedalmond;  */
+}
+
+.sheets-list {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+}
+
+.sheet {
+    min-width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-sheet {
+    background-color: wheat;
+}

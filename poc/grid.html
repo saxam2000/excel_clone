@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grid_container">
+        <div class="top-left-block"></div>
+        <div class="top-row">
+        </div>
+        <div class="left-col">
+            <div class="left-col-box"></div>
+        </div>
+        <div class="grid"></div>
+    </div>
+    <script>
+        let topRow = document.querySelector(".top-row");
+        let str = "";
+        for (let i = 0; i < 26; i++) {
+            str += `<div class="col">${String.fromCharCode(65+i)}</div>`
+        }
+        topRow.innerHTML = str;
+        let leftCol = document.querySelector(".left-col");
+        str = "";
+        for (let i = 0; i < 100; i++) {
+            str += `<div class="left-col-box">${i+1}</div>`
+        }
+        console.log(str);
+        leftCol.innerHTML = str;
+        let grid = document.querySelector(".grid");
+        str = "";
+        for (let i = 0; i < 100; i++) {
+            str += `<div class="row">`
+            for (let j = 0; j < 26; j++) {
+                str += `<div class="col">${String.fromCharCode(65+j)}${i+1}</div>`
+            }
+            str += `</div>`
+        }
+        grid.innerHTML = str;
+    </script>
+</body>
+
+</html>
