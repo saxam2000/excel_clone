@@ -21,3 +21,36 @@ for (let i = 0; i < 100; i++) {
     str += `</div>`
 }
 grid.innerHTML = str;
+// initial load
+let workSheetDB = [];
+
+function initCurrentSheetDb() {
+    let sheetDB = [];
+    for (let i = 0; i < 100; i++) {
+        let row = [];
+        for (let j = 0; j < 26; j++) {
+            let cell = {
+                bold: false,
+                italic: "normal",
+                underline: "none",
+                fontFamily: "Arial",
+                fontSize: "12",
+                halign: "left",
+                value: "",
+                initialValue: "",
+                color: "#000000",
+                fontColor: "#000000",
+                bgColor: "#ffffff",
+                formula: "",
+                children: []
+            }
+
+            row.push(cell);
+        }
+        sheetDB.push(row);
+    }
+    // console.log(sheetDB);
+    workSheetDB.push(sheetDB);
+    console.table(workSheetDB);
+}
+initCurrentSheetDb();
