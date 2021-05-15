@@ -2,6 +2,7 @@ let addbuttonContainer = document.querySelector(".add_sheet_container");
 let sheetList = document.querySelector(".sheets-list");
 let firstSheet = document.querySelector(".sheet");
 let Allcells = document.querySelectorAll(".grid .col");
+
 let addressBar = document.querySelector(".address-box");
 let address;
 let arid = 0;
@@ -10,6 +11,10 @@ let selectedcell;
 let sheetidx = 0;
 let fontsizeselect = document.querySelector(".font-size");
 let alignmentbtns = document.querySelectorAll(".alignment-container .align-btn");
+let downloadButton = document.querySelector(".download");
+let saveButton = document.querySelector(".save");
+let newButton = document.querySelector(".new");
+let openButton = document.querySelector(".open");
 let colourselect = document.querySelector("#color");
 let bgcolourselect = document.querySelector("#bg-color");
 let boldbtn = document.querySelector(".bold");
@@ -17,11 +22,28 @@ let italicbtn = document.querySelector(".italic");
 let underlinebtn = document.querySelector(".underline");
 let fontfamilyselect = document.querySelector(".font-family");
 let formulaInput = document.querySelector(".formula-box");
+let topLeftBlock = document.querySelector(".top-left-block");
+let gridContainer = document.querySelector(".grid_container");
 let sheetDB = workSheetDB[0];
 initUI();
 let cellObject;
+let filename;
 
-////////////////////////// alignment buttons events//////////////////////////////////////////
+
+
+
+
+gridContainer.addEventListener("scroll", function() {
+
+        let top = gridContainer.scrollTop;
+        let left = gridContainer.scrollLeft;
+        topLeftBlock.style.top = top + "px";
+        topRow.style.top = top + "px";
+        topLeftBlock.style.left = left + "px";
+        leftCol.style.left = left + "px";
+
+    })
+    ////////////////////////// alignment buttons events//////////////////////////////////////////
 for (let i = 0; i < alignmentbtns.length; i++) {
     alignmentbtns[i].addEventListener("click", function d() {
         // console.log("hello")
@@ -229,6 +251,12 @@ function initUI() {
 //input from keyboard  event for every cell
 for (let i = 0; i < Allcells.length; i++) {
     Allcells[i].addEventListener("keyup", function handleCell(e) {
+        let obj = Allcells[i].getBoundingClientRect();
+        let height = obj.height;
+        // let address = addressBar.value;
+        // let { rid, cid } = getRIdCIdfromAddress(address);
+        let leftCol = document.querySelectorAll(".left-col .left-col-box")[arid];
+        leftCol.style.height = height + "px";
         cellObject.value = Allcells[i].innerText;
     });
     Allcells[i].addEventListener("blur", function() {
